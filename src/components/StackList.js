@@ -11,6 +11,7 @@ export class StackList extends Component {
 
   render() {
     return (
+
       <div>
         {
           this.props.stacks.map(stack => {
