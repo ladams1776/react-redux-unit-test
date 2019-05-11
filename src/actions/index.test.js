@@ -3,7 +3,7 @@ import { stack, stacks} from '../data/fixtures';
 
 
 
-describe.only('actions', () => {
+describe('actions', () => {
 
   it('creates an action to set the main stack', () => {
     const expectedAction = {
