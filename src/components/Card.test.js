@@ -37,7 +37,15 @@ describe("<Card />", () => {
     expect(wrapper.find('.card-answer h4').hasClass('text-hidden')).toBe(true);
   });
 
-  // describe('onClick', () => {
-  //   it('should change className to `text-revealed`');
-  // });
+  describe('when clicking on the card', () => {
+    beforeEach(() => wrapper.simulate('click'));
+    
+    it('updates `reveal` to be `true`', () => {
+      expect(wrapper.state().reveal).toBe(true);
+    });
+
+    it('applies the `text-revealed` class to the card answer', () => {
+      expect(wrapper.find('.card-answer h4').hasClass('text-revealed')).toBe(true);
+    });
+  });
 });
