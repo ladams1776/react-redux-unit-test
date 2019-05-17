@@ -10,7 +10,7 @@ export const clue = {
   id: 0,
   question: 'q one',
   answer: 'a one',
-  value: 200
+  value: '200'
 };
 
 export const clues = [
