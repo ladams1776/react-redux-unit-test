@@ -1,24 +1,16 @@
-export const SET_STACK = 'SET_STACK';
-export const LOAD_STACKS = 'LOAD_STACKS';
-export const ADD_STACK = 'ADD_STACK';
+export const SET_CATEGORIES = 'SET_CATEGORIES';
+export const PICK_CATEGORY = 'PICK_CATEGORY';
 
-export function setStack(stack) {
+export function setCategories(categories) {
   return {
-    type: SET_STACK,
-    stack
-  };
-}
-
-export function loadStacks(stacks) {
-  return {
-    type: LOAD_STACKS,
-    stacks
+    type: SET_CATEGORIES,
+    categories
   }
 }
 
-export function addStack(stack) {
+export function pickCategory(category) {
   return {
-    type: ADD_STACK,
-    stack
+    type: PICK_CATEGORY,
+    category
   }
 }

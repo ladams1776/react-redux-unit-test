@@ -1,24 +1,22 @@
 import { combineReducers } from 'redux';
-import { SET_STACK, LOAD_STACKS, ADD_STACK } from '../actions';
+import { SET_CATEGORIES, PICK_CATEGORY } from '../actions';
 
-function stack(state = {}, action) {
-  switch (action.type) {
-    case SET_STACK:
-      return action.stack;
-    default:
-      return state;
-  }
-}
-
-function stacks(state = [], action) {
+function categories(state = [], action) {
   switch(action.type) {
-    case LOAD_STACKS:
-      return action.stacks;
-    case ADD_STACK:
-      return [...state, {...action.stack, id: state.length }];
+    case SET_CATEGORIES:
+      return action.categories;
     default:
       return state;
   }
 }
 
-export default combineReducers({ stack, stacks });
+function category(state = {}, action) {
+  switch(action.type) {
+    case PICK_CATEGORY:
+      return action.category;
+    default:
+      return state;
+  }
+}
+
+export default combineReducers({ categories, category });

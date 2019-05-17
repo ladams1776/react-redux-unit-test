@@ -1,22 +1,19 @@
-export const stack = {
+export const categories = [
+  { id: 0, title: 'category one' },
+  { id: 1, title: 'category two' },
+  { id: 2, title: 'category three' }
+];
+
+export const category = categories[0];
+
+export const clue = {
   id: 0,
-  title: "test title",
-  cards: [
-    {
-      id: 0,
-      prompt: "test prompt",
-      title: "test prompt",
-      answer: "test answer"
-    },
-    {
-      id: 1,
-      prompt: "test prompt 2",
-      title: "test prompt2",
-      answer: "test answer 2"
-    }
-  ]
+  question: 'q one',
+  answer: 'a one',
+  value: 200
 };
 
-export const stacks = [stack];
-
-export const StackListFixture = [...stack.cards];
+export const clues = [
+  clue,
+  { id: 1, question: 'q two', answer: 'a two', value: 400 }
+];

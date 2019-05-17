@@ -9,25 +9,12 @@ body {
   top: 30px;
 }
 
-.card {
+.clue {
   border: 1px solid lightgray;
   border-radius: 5px;
   margin: 10px;
   padding: 10px;
-  font-size: 16px;
   cursor: pointer;
-}
-
-.card-prompt {
-  display: inline-block;
-  text-align: left;
-  width: 50%;
-}
-
-.card-answer {
-  display: inline-block;
-  text-align: right;
-  width: 50%;
 }
 
 .text-hidden {

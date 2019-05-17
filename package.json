@@ -1,43 +1,25 @@
 {
-  "name": "stack",
+  "name": "jeopardy",
   "version": "0.1.0",
   "private": true,
+  "devDependencies": {
+    "enzyme": "^2.9.1",
+    "react-scripts": "1.0.11",
+    "react-test-renderer": "^15.6.1",
+    "sinon": "^3.2.0"
+  },
   "dependencies": {
-    "react": "^16.8.6",
-    "react-bootstrap": "^1.0.0-beta.8",
-    "react-dom": "^16.8.6",
-    "react-redux": "^7.0.3",
-    "react-router-dom": "^5.0.0",
-    "react-scripts": "3.0.0",
-    "redux": "^4.0.1"
+    "react": "^15.6.1",
+    "react-bootstrap": "^0.31.2",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.1.2",
+    "redux": "^3.7.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.12.1",
-    "react-test-renderer": "^16.8.6"
-  },
-  "setupFiles": [
-    "./src/setupTests.js"
-  ]
+  }
 }
