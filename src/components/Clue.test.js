@@ -32,12 +32,12 @@ describe("<Clue />", () => {
     beforeEach(() => {
       props.clue.value = undefined;
       clue = shallow(<Clue {...props} />)
-    })
+    });
 
     it('displays the value as `unknown`', () => {
       expect(clue.find('h4').text()).toEqual('unknown')
-    })
-  })
+    });
+  });
 
   describe("When clicked on", () => {
     beforeEach(() => {
