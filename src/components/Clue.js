@@ -5,7 +5,7 @@ class Clue extends Component {
     super();
 
     this.state = { reveal: false }
-  }
+  } 
 
   render() {
     const { answer, question, value } = this.props.clue;

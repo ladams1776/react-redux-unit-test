@@ -6,7 +6,7 @@ import { clue } from "../data/fixtures";
 const props = { clue };
 
 describe("<Clue />", () => {
-  const clue = shallow(<Clue {...props} />);
+  let clue = shallow(<Clue {...props} />);
 
   it("initial state should be reveal false", () => {
     expect(clue.state().reveal).toEqual(false);
@@ -22,5 +22,30 @@ describe("<Clue />", () => {
 
   it('should display the h5 answer', () => {
     expect(clue.find('h5').at(1).text()).toEqual(props.clue.answer);
+  });
+
+  it('should have text-hidden for a class name', () => {
+    expect(clue.find('h5').at(1).hasClass('text-hidden')).toEqual(true);
+  });
+
+  describe('when rendering a clue with no value', () => {
+    beforeEach(() => {
+      props.clue.value = undefined;
+      clue = shallow(<Clue {...props} />)
+    })
+
+    it('displays the value as `unknown`', () => {
+      expect(clue.find('h4').text()).toEqual('unknown')
+    })
+  })
+
+  describe("When clicked on", () => {
+    beforeEach(() => {
+      clue.simulate('click');
+    });
+
+    it('should change class name to text-revealed', () => {
+      expect(clue.find('h5').at(1).hasClass('text-revealed')).toEqual(true);
+    });
   });
 });
