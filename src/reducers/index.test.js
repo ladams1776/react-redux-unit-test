@@ -1,41 +1,20 @@
-import { sinon } from 'enzyme';
-import { categories as stubbingCategoriesData, category as stubbingCategoryData } from '../data/fixtures';
-import { categories, category } from './index';
-import { SET_CATEGORIES, PICK_CATEGORY } from '../actions';
+import { sinon } from "enzyme";
+import {
+  categories as stubbingCategoriesData,
+  category as stubbingCategoryData
+} from "../data/fixtures";
+import rootReducer from "./index";
+import * as actions from "../actions";
 
-describe('index.js', () => {
-  describe('categories function', () => {
-    let mockAction;
-
-    beforeEach(() => {
-      mockAction = {
-        type: SET_CATEGORIES,
-        categories: stubbingCategoriesData
-      }
-    });
-
-    it('it should return correct categories', () => {
-      const testingCategories = categories([], mockAction);
-      expect(testingCategories).toEqual(stubbingCategoriesData);
-    });
-    //@todo: need to test just returning state due to lack of approved type
+describe("root reducer", () => {
+  it("returns the initial state", () => {
+    expect(rootReducer({}, {})).toEqual({ categories: [], category: {} });
   });
 
-  describe('category function', () => {
-    let mockAction;
-
-    beforeEach(() => {
-      mockAction = {
-        type: PICK_CATEGORY,
-        category: stubbingCategoryData
-      }
+  it("sets categories now", () => {
+    expect(rootReducer({}, { type: actions.SET_CATEGORIES, categories: stubbingCategoriesData })).toEqual({
+      categories: stubbingCategoriesData,
+      category: {}
     });
-
-    it('it should return correct category', () => {
-      const testingCategory = category([], mockAction);
-      expect(testingCategory).toEqual(stubbingCategoryData);
-    });
-
-    //@todo: need to test just returning state due to lack of approved type
   });
 });
