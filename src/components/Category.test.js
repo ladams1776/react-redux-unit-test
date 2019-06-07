@@ -1,7 +1,7 @@
 import React from "react";
-import { mount } from "enzyme";
+import { mount, shallow } from "enzyme";
 import { fakeServer } from "sinon";
-import { Category } from "./Category";
+import { Category, LinkedCategory } from "./Category";
 import { category, clues } from "../data/fixtures";
 
 
@@ -31,8 +31,32 @@ describe("<Category />", () => {
       setTimeout(done);
     });
 
-    it('test one to three', () => {
-      console.log(category.debug());
+    // it('logs the category', () => {
+    //   console.log(category.debug());
+    // });
+
+    it('it initializes the clues in state', () => {
+      expect(category.state().clues).toEqual(clues);
+    });
+
+    it('renders tje category title', () => {
+      expect(category.find('h2').text()).toEqual(props.category.title);
+    });
+
+    it('renders the correct number of clues', () => {
+      expect(category.find('Clue').length).toEqual(clues.length);
+    });
+  });
+
+  describe('LinkedCategory', () => {
+    const linkedCategory = shallow(<LinkedCategory />);
+
+    it('creates the link to navigate home', () => {
+      expect(linkedCategory.find('Link h4').text()).toEqual('Home');
+    });
+
+    it('creates a category component', () => {
+      expect(linkedCategory.find('Category').exists()).toBe(true);
     });
   });
 });
