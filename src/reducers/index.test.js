@@ -18,8 +18,6 @@ describe("actions", () => {
   });
 
   it("creates an action to pick a category", () => {
-    const category = categories[0];
-
     const expectedAction = {
       type: actions.PICK_CATEGORY,
       category

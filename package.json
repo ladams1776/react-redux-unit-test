@@ -9,6 +9,7 @@
     "sinon": "^3.3.0"
   },
   "dependencies": {
+    "querystringify": "^2.1.1",
     "react": "^15.6.1",
     "react-bootstrap": "^0.31.2",
     "react-dom": "^15.6.1",
